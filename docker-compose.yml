@@ -1,0 +1,13 @@
+services:
+  bot:
+    image: alpine:3.12
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: ./bot
+    restart: always
+    tty: true
+    environment:
+      - DEPOSIT_ADDRESS=${DEPOSIT_ADDRESS}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TONCENTER_API_KEY=${TONCENTER_API_KEY}
